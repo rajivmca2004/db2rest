@@ -6,6 +6,7 @@ import org.mybatis.dynamic.sql.SqlColumn;
 import org.mybatis.dynamic.sql.SqlCriterion;
 
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 import static org.mybatis.dynamic.sql.SqlBuilder.isIn;
@@ -17,7 +18,7 @@ public class InOperator implements Operator {
 
     @Override
     public SqlCriterion handle(SqlColumn<Object> column, String value, Class<?> type) {
-        return handle(column, Arrays.asList(value), type);
+        return handle(column, Collections.singletonList(value), type);
     }
 
     @Override
